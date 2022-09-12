@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-expressions */
 // Librerias
 import { createContext, useState, useEffect } from "react";
-import { Redirect } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -27,6 +28,7 @@ export function AuthProvider({ children }) {
   const [credentials, setCredentials] = useState(null);
 
   const auth = getAuth(firebaseApp);
+  const location = useLocation();
 
   const getUSer = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
@@ -35,7 +37,6 @@ export function AuthProvider({ children }) {
         const user = userCredential.user;
         setUser(user);
         console.log(user);
-        window.location.href !== "/home"
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -51,7 +52,8 @@ export function AuthProvider({ children }) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         setUser(user);
-        // ...
+        console.log("Ya existe un usuario en la sesion");
+        location.pathname === "/" && (window.location.href = "/home");
       } else {
         // User is signed out
         // ...
@@ -60,12 +62,12 @@ export function AuthProvider({ children }) {
   };
 
   useEffect(() => {
-    if (credentials) {
-      getUSer(credentials.email, credentials.password);
-    } else {
-      readExistingUser();
-    }
+    credentials && getUSer(credentials.email, credentials.password);
   }, [credentials]);
+
+  useEffect(() => {
+    readExistingUser();
+  }, []);
 
   return (
     <AuthContext.Provider value={{ error, user, setCredentials }}>

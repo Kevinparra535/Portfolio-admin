@@ -1,0 +1,16 @@
+@import "./../tokens/colors";
+@import "./../tokens/spacings";
+@import "./../tokens/typos";
+
+.empty {
+  padding: $space_x3;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw !important;
+  text-align: center;
+  h1 {
+    @include font-size($h2);
+  }
+}

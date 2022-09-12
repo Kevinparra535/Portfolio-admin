@@ -1,5 +1,5 @@
 // Librerias
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 // Contextos
 
@@ -19,9 +19,8 @@ import React, { useEffect, useState } from "react";
  * Bugs: Qué bugs se han presentado y como se solucionan.
  */
 
-const Home = () => {
+const CreatePost = () => {
   // Estados
-  const [data, setData] = useState([]);
 
   // Contextos
 
@@ -32,7 +31,11 @@ const Home = () => {
   // UseEffects
   useEffect(() => {}, []);
 
-  return <h1>Home</h1>;
+  return (
+    <>
+      <h1>Create Post</h1>
+    </>
+  );
 };
 
-export default Home;
+export default CreatePost;

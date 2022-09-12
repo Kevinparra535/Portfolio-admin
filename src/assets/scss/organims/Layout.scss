@@ -1,0 +1,4 @@
+.layout {
+  @include display-grid;
+  @include grid-template-columns(150px auto);
+}

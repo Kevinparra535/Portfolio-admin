@@ -1,0 +1,9 @@
+@import "./../tokens/colors";
+@import "./../tokens/spacings";
+@import "./../tokens/typos";
+
+body {
+  font-family: $Fuente1;
+  color: $color-oscuro;
+  background-color: $color-bg-claro;
+}

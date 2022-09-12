@@ -1,0 +1,97 @@
+@import "../Tokens/colors";
+@import "../Tokens/spacings";
+@import "../Tokens/typos";
+
+.login {
+  align-items: center;
+  @include display-grid;
+  @include grid-template-columns(auto);
+
+  &__image {
+    display: none;
+  }
+
+  &__form {
+    padding: $space_x3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+
+    &__header {
+      padding: $space_x3;
+      text-align: center;
+
+      img {
+        margin-bottom: $space;
+        width: 60px;
+        border-radius: 100%;
+        background-color: $color-variante-dos;
+      }
+    }
+
+    span {
+      font-weight: $bolder;
+      color: $color-negative;
+      @include font-size(15px);
+    }
+
+    input {
+      @include inputs;
+    }
+
+    button {
+      margin-top: $space_x3 !important;
+      width: 100%;
+      border: none;
+      outline: none;
+      cursor: pointer !important;
+      @include callToActions;
+    }
+  }
+
+  @include media(desktop-s) {
+    @include grid-template-columns(auto 40%);
+
+    &__image {
+      display: inline;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://media.giphy.com/media/26ufi3fhbMuim5VDO/giphy.gif");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &__form {
+      padding: $space_x3;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+
+      &__header {
+        padding: $space_x3;
+        text-align: center;
+
+        img {
+          margin-bottom: $space;
+          width: 60px;
+          background-color: $color-variante-dos;
+        }
+      }
+
+      input {
+        @include inputs;
+      }
+
+      button {
+        width: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        @include callToActions;
+      }
+    }
+  }
+}
