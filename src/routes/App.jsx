@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { AuthProvider } from "../contexts/Auth.context";
@@ -16,6 +16,7 @@ function App() {
           <Switch>
             {/* Tenemos un bug en la redireccion */}
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/dashboard/create-post" component={CreatePost} />
           </Switch>
         </Layout>
       </AuthProvider>

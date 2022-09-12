@@ -1,0 +1,31 @@
+@import "./../tokens/colors";
+@import "./../tokens/spacings";
+@import "./../tokens/typos";
+
+.imagepreview {
+  padding: $space_half $space;
+  width: 500px;
+
+  &.active {
+    border: 1px solid $color-oscuro;
+  }
+
+  ol {
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      padding: $space 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  img {
+    margin: 0 $space_half 0 0;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    background-color: $color-bg-claro;
+  }
+}

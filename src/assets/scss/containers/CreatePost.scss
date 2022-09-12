@@ -1,0 +1,67 @@
+@import "./../tokens/colors";
+@import "./../tokens/spacings";
+@import "./../tokens/typos";
+
+.createpost {
+  padding: $space_x4;
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+  border-radius: $space_x4;
+  background-color: $color-claro;
+
+  &__form {
+    padding: $space_x4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80%;
+
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    input {
+      padding: $space_half $space;
+      margin: 0 0 $space_half;
+      width: 100%;
+      outline: none !important;
+
+      &.error {
+        border: 1px solid $color-negative;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      outline: none !important;
+
+      &.error {
+        border: 1px solid $color-negative;
+      }
+    }
+
+    label {
+      margin: $space 0;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    p {
+      margin-bottom: $space_half;
+    }
+
+    span {
+      color: $color-negative;
+      @include font-size(13px);
+    }
+  }
+}

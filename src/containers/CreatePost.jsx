@@ -1,11 +1,12 @@
 // Librerias
-import React, { useEffect } from "react";
+import React from "react";
 
 // Contextos
 
 // Hooks
 
 // Componentes
+import Form from "../components/CreatePost/Form";
 
 // Imagenes
 
@@ -29,12 +30,13 @@ const CreatePost = () => {
   // Funciones
 
   // UseEffects
-  useEffect(() => {}, []);
 
   return (
-    <>
+    <div className="createpost">
       <h1>Create Post</h1>
-    </>
+
+      <Form />
+    </div>
   );
 };
 
