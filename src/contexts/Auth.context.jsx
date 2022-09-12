@@ -53,7 +53,7 @@ export function AuthProvider({ children }) {
         // https://firebase.google.com/docs/reference/js/firebase.User
         setUser(user);
         console.log("Ya existe un usuario en la sesion");
-        location.pathname === "/" && (window.location.href = "/home");
+        location.pathname === "/" && (window.location.href = "/dashboard");
       } else {
         // User is signed out
         // ...

@@ -1,6 +1,6 @@
 // Librerias
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // Contextos
 
@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
  * Bugs: Qué bugs se han presentado y como se solucionan.
  */
 
-const Dashboard = () => {
+const Header = () => {
   // Estados
 
   // Contextos
@@ -30,21 +30,20 @@ const Dashboard = () => {
   // Funciones
 
   // UseEffects
+  useEffect(() => {}, []);
 
+  // Renders
   return (
-    <main className="main">
-      <h1>Dashboard</h1>
-
-      <div className="main__grid">
-        <Link to="/dashboard/create-post">
-          <h2>Create post</h2>
-        </Link>
-        <div>Card</div>
-        <div>Card</div>
-        <div>Card</div>
-      </div>
-    </main>
+    <>
+      <header>
+        <h1>Admin</h1>
+      </header>
+    </>
   );
 };
 
-export default Dashboard;
+Header.propTypes = {};
+
+Header.defaultProps = {};
+
+export default Header;

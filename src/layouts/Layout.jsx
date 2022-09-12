@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 // Hooks
 
 // Componentes
+import Header from "./Header";
 import Aside from "./Aside/Aside";
 
 // Imagenes
@@ -33,17 +34,17 @@ const Layout = ({ children }) => {
   // const location = useLocation();
 
   // UseEffects
-  useEffect(() => {
-    console.log(location);
-  }, []);
 
   return (
     <>
-      {location.pathname !== "/" ? (
+      <Header />
+      {children}
+
+      {/* {location.pathname !== "/" ? (
         <div className="layout">{children}</div>
       ) : (
         <>{children}</>
-      )}
+      )} */}
     </>
   );
 };

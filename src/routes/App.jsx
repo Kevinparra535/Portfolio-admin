@@ -9,19 +9,13 @@ import Dashboard from "../containers/Dashboard";
 import CreatePost from "../containers/CreatePost";
 
 function App() {
-  const location = window.location;
-
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
-
   return (
     <BrowserRouter>
       <AuthProvider>
         <Layout>
           <Switch>
             {/* Tenemos un bug en la redireccion */}
-            <Route exact path="/" component={Dashboard} />
+            <Route exact path="/dashboard" component={Dashboard} />
           </Switch>
         </Layout>
       </AuthProvider>
